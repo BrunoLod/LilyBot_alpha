@@ -1,0 +1,346 @@
+    @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+    :root {
+        --main-black: #000000;
+        --secondary-black: rgba(22, 22, 22, 0.35);
+
+        --main-red: #F42B27;
+
+        --inner-shadow: inset 0 2px 25px 2px rgba(244, 43, 39, 0.5);
+
+        --text-color-title-app: #FFFFFF;
+        --text-color-intro: #ACACAC;
+        --text-color-title-card: #D4D4D4;
+        --text-color: #C2C3C3;
+
+    }
+
+    * {
+        max-width: 100%;
+        box-sizing: border-box;
+        background-color: var(--main-black);
+    }
+
+    .app {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+        height: 80px;
+        gap: 1.6rem;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--main-black);
+    }
+
+    .logo_icon {
+        background: none;
+        margin-left: 2rem;
+        height: 70px;
+        width: 70px;
+    }
+
+    .app_title {
+        font-family: "Crimson Text", serif;
+        font-size: 35px;
+        font-weight: 700;
+        color: var(--text-color-title-app);
+    }
+
+    .app_title:hover {
+        cursor: pointer;
+    }
+
+    .lily_intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5rem;
+
+
+    }
+
+    .image_intro {
+        margin: 0 0 3.8rem 0;
+        height: 370px;
+        justify-self: center;
+
+
+    }
+
+    .text_intro {
+        display: flex;
+        font-family: "Crimson Text", serif;
+        font-size: 40px;
+        font-weight: 700;
+        color: var(--text-color-intro);
+        text-align: center;
+
+        justify-content: flex-start;
+
+        overflow: hidden;
+        white-space: nowrap;
+
+        margin-left: 3rem;
+
+        animation: typing 1.5s steps(120, end) forwards;
+        /* Adicione "forwards" */
+    }
+
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 100%;
+        }
+    }
+
+    .cards {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 90%;
+    }
+
+    .cards_list {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 320px;
+        height: 340px;
+        background-color: var(--secondary-black);
+        border: 2px solid var(--main-red);
+        border-radius: 16px;
+
+        /* Adicione o efeito de inner shadow aqui */
+        box-shadow: inset 0 2px 25px 2px rgba(244, 43, 39, 0.5);
+
+        /* Adicioando efeito de transição nos cards*/
+        transition: transform 2s;
+
+    }
+
+    .card,
+    .image_intro {
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+    }
+
+    .title_card {
+        font-family: "Gentium Book Plus", serif;
+        font-weight: 400;
+        font-size: 28px;
+        color: var(--text-color-title-card);
+        background: none;
+        margin-left: 1.8rem;
+
+    }
+
+    .subtitle_card {
+        font-family: "Gentium Book Plus", serif;
+        font-weight: 400;
+        font-size: 18px;
+        background: none;
+        color: var(--text-color);
+        margin-left: 1.8rem;
+        max-width: 80%;
+        margin-top: -1rem;
+    }
+
+    .icon_card {
+        position: absolute;
+
+        height: 100px;
+        width: 100px;
+        background: none;
+
+        bottom: 0;
+        right: 0;
+
+        margin: 0 0.5rem 0.3rem 0;
+    }
+
+    .chat-section {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        align-items: center;
+        padding: 7rem 0 7rem 0;
+        margin: 2rem 0;
+    }
+
+    .chat-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 5rem;
+        width: 90%;
+        height: 70vh;
+
+    }
+
+    .chat-messages {
+        max-height: 60vh;
+        overflow-y: auto;
+    }
+
+    /* Esconde a barra de scroll */
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    .message-icon {
+        background: none;
+        width: 6rem;
+        height: 6rem;
+        margin-bottom: -0.5rem;
+    }
+
+    .message {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+
+    }
+
+    .message.show {
+        opacity: 1;
+    }
+
+    .user-message {
+        align-items: flex-start;
+    }
+
+    .lily-message {
+        align-items: flex-end;
+    }
+
+    .message p {
+        font-family: "Gentium Book Plus", serif;
+        font-size: 1.5rem;
+        color: var(--text-color-title-card);
+        padding: 2rem;
+        word-break: break-word;
+
+        background-color: var(--secondary-black);
+        border: 2px solid var(--main-red);
+        border-radius: 16px;
+        box-shadow: inset 0 2px 25px 2px rgba(244, 43, 39, 0.5);    
+    }
+
+    .input_text::placeholder {
+
+        /* Estilo do placeholder quando não está em foco */
+
+        color: var(--text-color);
+        font-family: "Gentium Book Plus", serif;
+        font-size: 1.5rem;
+        opacity: 0.95;
+    }
+
+    .input_text:focus::placeholder {
+
+        /* Estilo do placeholder quando está em foco */
+
+        color: var(--text-color);
+        font-family: "Gentium Book Plus", serif;
+        font-size: 1.5rem;
+        opacity: 0.95;
+    }
+
+    /* Adicionei essas regras para garantir que o placeholder mantenha seu estilo */
+    .input_text:focus {
+
+        /* Remove o contorno padrão quando o input está em foco */
+        outline: none;
+    }
+
+    .placeholder_container {
+        flex-direction: column-reverse;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .input_text {
+
+        min-height: calc(3 * 1.2rem);
+        /* Altura mínima */
+        max-height: 12rem;
+        /* Altura máxima (opcional) */
+
+        line-height: 1.2;
+
+        font-family: "Gentium Book Plus", serif;
+        font-size: 1.5rem;
+
+        padding: 1rem;
+
+        color: var(--text-color-title-card);
+
+
+        border: 2px solid var(--main-red);
+        border-radius: 30px;
+
+        width: 75%;
+        margin: 2rem 0 1rem 0;
+        box-shadow: inset 0 2px 15px 2px rgba(244, 43, 39, 0.5);
+
+        overflow-y: auto;
+        resize: none;
+
+        transition: height 0.5s ease-in-out;
+        /* Transição suave */
+        word-break: break-word;
+    }
+
+    /* Remove a barra de rolagem */
+    .input_text::-webkit-scrollbar {
+        display: none;
+    }
+
+    .bottom_placeholder_text {
+        display: flex;
+        justify-content: center;
+        margin: 0.2rem 0 1rem 0;
+        font-family: "Crimson Text", serif;
+        font-size: 18px;
+        color: var(--text-color);
+        font-weight: 400;
+
+    }
+
+    .card:hover {
+
+        background-color: var(--main-black);
+        box-shadow: inset 0 2px 15px 2px rgba(244, 43, 39, 0.5);
+
+        cursor: pointer;
+        transform: translate(0, -1.1rem);
+    }
+
+    .footer-fixed {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }

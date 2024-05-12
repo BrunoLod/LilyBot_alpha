@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lily Ai</title>
+
+    <link rel="icon" href="/image/lily_icon.png" />
+    <link rel="stylesheet" href="/src/Estilos/estilo.css">
+
+    <script src="index.js" defer></script>
+
+</head>
+
+<body>
+    <main class="app">
+
+        <header class="header">
+            <img src="/image/lily_icon.png" alt="" class="logo_icon">
+            <h1 class="app_title">Lily Ai</h1>
+        </header>
+
+        <section class="lily_intro">
+
+            <div class="text_intro">
+                <!--A tag <br> realiza uma quebra de linha, 
+                        sem a necessidade de criar uma nova tag <p>-->
+                <p>
+                    Prazer, o que deseja conversar?<br>
+                    Relaxa que eu não mordo, só se você quiser...
+                </p>
+            </div>
+
+            <div class="image_intro">
+                <img src="/image/lily_logo.png" alt="">
+            </div>
+
+
+        </section>
+
+        <section class="cards">
+            <div>
+                <ul class="cards_list">
+
+                    <li>
+                        <div class="card" data-card-id="dicas-de-roles">
+                            <h3 class="title_card">Dícas de rolês</h3>
+                            <p class="subtitle_card">
+                                Conheça, explore e se descubra!
+                            </p>
+                            <img src="/icons/local.png" alt="" class="icon_card">
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="card" data-card-id="rock-and-rolling">
+                            <h3 class="title_card">Rock and<br> Rolling</h3>
+                            <p class="subtitle_card">
+                                Sinta a vibe das notas invadirem o seu ser e se jogue!
+                            </p>
+                            <img src="/icons/rock.png" alt="" class="icon_card">
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="card" data-card-id="ecos-da-alma">
+                            <h3 class="title_card">Ecos da alma</h3>
+                            <p class="subtitle_card">
+                                Para almas cansadas que desejam desabafar
+                            </p>
+                            <img src="/icons/chat.png" alt="" class="icon_card">
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="card" data-card-id="conheca-me">
+                            <h3 class="title_card">Conheça-me</h3>
+                            <p class="subtitle_card">
+                                Entre os véus do crepúsculo, desvende os ecos da minha existência
+                            </p>
+                            <img src="/icons/write.png" alt="" class="icon_card">
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+        <section class="chat-section" style="display: none;">
+            <div class="chat-container">
+                <div class="chat-messages"></div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            
+            <div class="placeholder_container">
+                <textarea class="input_text" placeholder="O que a sua alma deseja ?" id="textarea"></textarea>
+            </div>
+
+            <div>
+                <p class="bottom_placeholder_text">
+                    As palavras podem ser como teias de aranha, tecidas com engano e mistério. Desvende seus fios com
+                    cuidado para que não seja devorado.
+                </p>
+            </div>
+
+        </footer>
+
+    </main>
+
+</body>
+
+</html>
